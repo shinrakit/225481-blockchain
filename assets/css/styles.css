@@ -1,4 +1,4 @@
-/* styles.css — ธีมสมุดอ่านสอบ (สว่างเป็นหลัก) ใช้ฟอนต์ระบบที่รองรับภาษาไทย ไม่โหลดทรัพยากรภายนอก */
+/* styles.css — ธีมสมุดอ่านสอบ (สว่างเป็นหลัก) */
 :root {
   --bg: #f6f7f4;
   --paper: #ffffff;
@@ -178,7 +178,7 @@ tbody th { background: var(--line-soft); width: 32%; }
 .tree-row.small .tn { font-size: .68em; }
 .tree-row .tn.data { border-color: var(--teal); background: var(--teal-soft); }
 .formula { display: flex; align-items: center; justify-content: center; gap: 10px; font-weight: 700; margin: 12px 0; font-size: 1.02em; flex-wrap: wrap; }
-.frac { display: inline-flex; flex-direction: column; text-align: center; font-family: ui-monospace, Consolas, monospace; font-size: .9em; }
+.frac { display: inline-flex; flex-direction: column; text-align: center; font-family: inherit; font-size: .9em; }
 .frac span:first-child { border-bottom: 2px solid var(--ink); padding: 0 6px; overflow-wrap: anywhere; }
 .chips, .chips-ol { display: flex; flex-wrap: wrap; gap: 8px; margin: 10px 0; padding: 0; list-style: none; }
 .chip, .chips-ol li { background: var(--primary-soft); color: var(--primary); border-radius: 999px; padding: 4px 12px; font-size: .9em; font-weight: 600; }
