@@ -113,6 +113,7 @@ main:focus { outline: none; }
 .badge-info { background: var(--primary-soft); color: var(--primary); border-color: transparent; }
 .progressbar { height: 10px; background: var(--line-soft); border-radius: 999px; overflow: hidden; }
 .progressbar > span { display: block; height: 100%; background: var(--teal); }
+.chapter-progress .progressbar { margin: 8px 0; }
 
 /* ---------- lesson ---------- */
 .lesson-head { border-bottom: 2px solid var(--line); padding-bottom: 8px; margin-bottom: 8px; }

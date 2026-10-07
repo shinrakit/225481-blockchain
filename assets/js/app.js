@@ -137,6 +137,12 @@
       .sort(function (a, b) { return (b.lastWrong - a.lastWrong) || (a.c / a.n - b.c / b.n); });
   }
   function chapterRead(ch) { return ch.topics.filter(function (t) { return st().readTopics[t.id]; }).length; }
+  function chapterProgressCard(ch) {
+    var read = chapterRead(ch), total = ch.topics.length, percent = pct(read, total);
+    return "<div class=\"card chapter-progress\"><h2 style=\"margin-top:0\">ความคืบหน้าการอ่านบทนี้</h2>" +
+      "<div class=\"progressbar\" aria-label=\"อ่านแล้ว " + read + " จาก " + total + " หัวข้อ (" + percent + "%)\"><span style=\"width:" + percent + "%\"></span></div>" +
+      "<p class=\"muted\">อ่านแล้ว " + read + "/" + total + " หัวข้อ (" + percent + "%)</p></div>";
+  }
 
   /* ---------- home ---------- */
   function renderHome() {
@@ -214,6 +220,7 @@
   function renderChapter(chId) {
     var ch = chapterOf(chId); if (!ch) return renderNotFound();
     var html = "<div class=\"page\"><p class=\"crumbs\"><a href=\"#lessons\">บทเรียน</a></p><h1>" + esc(ch.title) + "</h1><p>" + esc(ch.intro) + "</p>" +
+      chapterProgressCard(ch) +
       "<div class=\"card\"><h2 style=\"margin-top:0\">สารบัญบท</h2><ol>" + ch.topics.map(function (t) { return "<li><a href=\"#chapter/" + ch.id + "/topic/" + t.id + "\">" + esc(t.title) + "</a></li>"; }).join("") + "</ol><div class=\"btn-row no-print\"><button type=\"button\" data-act=\"print\">พิมพ์ทั้งบท</button></div></div>";
     ch.topics.forEach(function (t) { html += topicBody(t, true); });
     main.innerHTML = html + "</div>";
