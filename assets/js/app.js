@@ -142,7 +142,8 @@
   function renderHome() {
     var last = st().lastTopic && topicById[st().lastTopic];
     var html = "<div class=\"page-wide\"><h1>อ่านสอบปลายภาค: Blockchain สำหรับภาครัฐ</h1>" +
-      "<p>เนื้อหาครบ 3 บทจากหนังสือ <i>" + esc(BC.source.title) + "</i> เรียบเรียงให้อ่านเข้าใจโดยไม่ต้องเปิดหนังสือ ทุกหัวข้อมีหน้าอ้างอิงให้ตรวจกับต้นฉบับ</p>";
+      "<p>เนื้อหาครบ 3 บทจากหนังสือ <i>" + esc(BC.source.title) + "</i> เรียบเรียงให้อ่านเข้าใจโดยไม่ต้องเปิดหนังสือ ทุกหัวข้อมีหน้าอ้างอิงให้ตรวจกับต้นฉบับ</p>" +
+      "<div class=\"btn-row\"><a class=\"btn btn-primary\" href=\"./old_content.html\">เปิดเนื้อหาแบบเดิม</a></div>";
     if (last) html += "<div class=\"card\"><b>อ่านต่อจากจุดเดิม:</b> <a href=\"" + topicLink(last.id) + "\">" + esc(last.title) + "</a> <span class=\"muted\">(บทที่ " + last.chapterId + ")</span></div>";
     html += "<h2>ลำดับการอ่านที่แนะนำ</h2><ol class=\"steps-guide\">" +
       "<li><b>อ่าน</b> บทเรียนทีละหัวข้อ</li><li><b>นึกคำตอบ</b> ในกล่อง “ลองนึกคำตอบก่อนเปิด”</li><li><b>ฝึก</b> ข้อฝึกของหัวข้อนั้น</li><li><b>สอบจำลอง</b> ชุด A/B ชุดละ 90 ข้อ</li><li><b>ทวนข้อผิด</b> แล้วกลับไปอ่านจุดที่พลาด</li></ol>";
